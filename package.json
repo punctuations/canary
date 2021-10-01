@@ -1,7 +1,7 @@
 {
-	"name": "node-template",
+	"name": "dsgn",
 	"description": "An ESM node package template with ESLint, Prettier & TypeScript built in. Powered by esbuild.",
-	"version": "1.0.5",
+	"version": "1.0.0",
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"exports": {
@@ -10,28 +10,27 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/alii/node-template.git"
+		"url": "git+https://github.com/punctuations/dsgn.git"
 	},
-	"author": "Alistair Smith <alistairsmith01@gmail.com> (https://alistair.sh)",
+	"author": "Matt <matt@dont-ping.me> (https://dont-ping.me)",
 	"license": "MIT",
-	"funding": {
-		"type": "github",
-		"url": "https://github.com/sponsors/alii"
-	},
 	"devDependencies": {
+		"@types/react": "^17.0.26",
 		"@typescript-eslint/eslint-plugin": "^4.32.0",
 		"@typescript-eslint/parser": "^4.32.0",
 		"eslint": "^7.32.0",
 		"eslint-config-xo": "^0.38.0",
 		"eslint-config-xo-typescript": "^0.44.0",
+		"framer-motion": "^4.1.17",
 		"prettier": "^2.4.1",
+		"react": "^17.0.2",
 		"tsup": "^5.2.1",
 		"typescript": "^4.4.3"
 	},
 	"scripts": {
 		"build": "tsup src/index.ts --dts --format esm,cjs",
-		"lint": "eslint ./src/**/*.ts",
-		"fix": "eslint ./src/**/*.ts --fix"
+		"lint": "eslint ./src/**/*.{ts,tsx}",
+		"fix": "eslint ./src/**/*.{ts,tsx} --fix"
 	},
 	"bugs": {
 		"url": "https://github.com/alii/nextkit/issues"
