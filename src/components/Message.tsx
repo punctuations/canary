@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import {motion} from 'framer-motion';
 import {chat, message} from '../types/constants';
@@ -32,17 +33,10 @@ const Provider = (props: {
 	to?: boolean;
 	className?: string;
 }) => (
-	<motion.div
-		variants={props.motion ?? chat}
-		initial="hidden"
-		animate="show"
-		className={`flex ${props.pfp ? 'flex-row space-x-3' : 'flex-col'} ${
-			props.to || props.pfp ? 'items-end' : 'items-start'
-		} ${props.className ?? ''}`}
-	>
+	<ProviderContainer variants={props.motion ?? chat} initial="hidden" animate="show">
 		{props.pfp ? (
 			<>
-				<motion.img
+				<ProviderProfile
 					initial={{opacity: 0}}
 					animate={{
 						opacity: 1,
@@ -54,16 +48,50 @@ const Provider = (props: {
 					}}
 					src={props.pfp}
 					alt="pfp"
-					className="z-10 mb-1.5 h-8 w-8 rounded-full"
 				/>
-				<div className="flex flex-col items-start">{props.children}</div>
+				<ProviderDiv className="flex flex-col items-start">{props.children}</ProviderDiv>
 			</>
 		) : (
 			props.children
 		)}
-	</motion.div>
+	</ProviderContainer>
 );
 
 Message.Provider = Provider;
 
 export default Message;
+
+const ProviderContainer = styled(motion.div)<{
+	pfp?: string;
+	to?: boolean;
+	className?: string;
+}>`
+	display: flex;
+	${props =>
+		props.pfp
+			? 'flex-direction: row; margin-right: calc(.75rem * 0); margin-left: calc(.75rem * calc(1 - 0));'
+			: 'flex-direction: column;'}
+	${props =>
+		props.to || props.pfp
+			? '-webkit-box-align: end; -ms-flex-align: end; align-items: flex-end;'
+			: '-webkit-box-align: start; -ms-flex-align: start; align-items: flex-start;'}
+	${props => props.className ?? ''}
+`;
+
+const ProviderProfile = styled(motion.img)`
+	border-radius: 9999px;
+	height: 2rem;
+	margin-bottom: 0.375rem;
+	width: 2rem;
+	z-index: 10;
+`;
+
+const ProviderDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+`;
+
+const MessageContainer = styled(motion.div)<{to?: boolean; hide?: boolean}>``;
