@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import '../styles';
+
 import {motion} from 'framer-motion';
 import {chat, message} from '../types/constants';
 
 const Message = (props: {text: string; hide?: boolean; to?: boolean}) => (
 	<motion.div
 		variants={message}
-		className={`${
+		style={{userSelect: 'none'}}
+		className={
 			props.to
-				? `${props.hide ? 'message-hidden-to' : 'message-to dark:message-dark-to'}`
-				: `${props.hide ? 'message-hidden dark:message-hidden-dark' : 'message dark:message-dark'}`
-		} select-none`}
+				? `${props.hide ? 'message-hidden-to' : 'message-auto-to'}`
+				: `${props.hide ? 'message-auto-hidden' : 'message-auto'}`
+		}
 	>
 		{props.text}
 	</motion.div>
@@ -93,5 +96,3 @@ const ProviderDiv = styled.div`
 	-ms-flex-align: start;
 	align-items: flex-start;
 `;
-
-const MessageContainer = styled(motion.div)<{to?: boolean; hide?: boolean}>``;

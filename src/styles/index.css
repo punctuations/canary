@@ -1,3 +1,5 @@
+
+/* selections */
 @media (prefers-color-scheme: dark) {
     ::selection {
         background-color: #f81ce5;
@@ -10,6 +12,317 @@
         background-color: #79ffe1;
         color: #000;
     }
+}
+
+
+/* auto messages */
+@media (prefers-color-scheme: dark) {
+    .message-auto {
+        border-radius: 20px;
+        padding: 8px 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+
+        align-items: flex-start;
+
+        background-color: #26252A;
+        color: white;
+        position: relative;
+    }
+
+    .message-auto:before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: -7px;
+        height: 20px;
+        width: 20px;
+        background: #26252A;
+        border-bottom-right-radius: 15px;
+    }
+
+    .message-auto:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: -10px;
+        width: 10px;
+        height: 20px;
+        transition-duration: 240ms;
+        background: black;
+        border-bottom-right-radius: 10px;
+    }
+
+    .message-auto-to:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: -10px;
+        width: 10px;
+        height: 20px;
+        transition-duration: 240ms;
+        background: black;
+        border-bottom-left-radius: 10px;
+    }
+
+    .message-auto-hidden {
+        border-radius: 20px;
+        padding: 8px 13px;
+        margin-top: 5px;
+        margin-bottom: -2px;
+        display: inline-block;
+
+        align-items: flex-start;
+
+        background-color: #26252A;
+        color: white;
+        position: relative;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .message-auto {
+        border-radius: 20px;
+        padding: 8px 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+
+        align-items: flex-start;
+
+        background-color: #EEE;
+        color: black;
+        position: relative;
+    }
+
+    .message-auto:before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: -7px;
+        height: 20px;
+        width: 20px;
+        background: #EEE;
+        border-bottom-right-radius: 15px;
+    }
+
+    .message-auto:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: -10px;
+        width: 10px;
+        height: 20px;
+        transition-duration: 240ms;
+        background: white;
+        border-bottom-right-radius: 10px;
+    }
+
+    .message-auto-to:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: -10px;
+        width: 10px;
+        height: 20px;
+        transition-duration: 240ms;
+        background: white;
+        border-bottom-left-radius: 10px;
+    }
+
+    .message-auto-hidden {
+        border-radius: 20px;
+        padding: 8px 13px;
+        margin-top: 5px;
+        margin-bottom: -2px;
+        display: inline-block;
+
+        align-items: flex-start;
+
+        background-color: #EEE;
+        color: black;
+        position: relative;
+    }
+}
+
+/* manual messages */
+.message {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+    align-items: flex-start;
+
+    background-color: #EEE;
+    color: black;
+    position: relative;
+}
+
+.message-hidden {
+    border-radius: 20px;
+    padding: 8px 13px;
+    margin-top: 5px;
+    margin-bottom: -2px;
+    display: inline-block;
+
+    align-items: flex-start;
+
+    background-color: #EEE;
+    color: black;
+    position: relative;
+}
+
+.message:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -7px;
+    height: 20px;
+    width: 20px;
+    background: #EEE;
+    border-bottom-right-radius: 15px;
+}
+
+.message:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: -10px;
+    width: 10px;
+    height: 20px;
+    transition-duration: 240ms;
+    background: white;
+    border-bottom-right-radius: 10px;
+}
+
+.message-dark {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+    align-items: flex-start;
+
+    background-color: #26252A;
+    color: white;
+    position: relative;
+}
+
+.message-hidden-dark {
+    border-radius: 20px;
+    padding: 8px 13px;
+    margin-top: 5px;
+    margin-bottom: -2px;
+    display: inline-block;
+
+    align-items: flex-start;
+
+    background-color: #26252A;
+    color: white;
+    position: relative;
+}
+
+.message-dark:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -7px;
+    height: 20px;
+    width: 20px;
+    background: #26252A;
+    border-bottom-right-radius: 15px;
+}
+
+.message-dark:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: -10px;
+    width: 10px;
+    height: 20px;
+    transition-duration: 240ms;
+    background: black;
+    border-bottom-right-radius: 10px;
+}
+
+.message-to {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+    align-items: flex-end;
+
+    background: rgb(0, 120, 254);
+    color: white;
+    position: relative;
+}
+
+.message-hidden-to {
+    border-radius: 20px;
+    padding: 8px 13px;
+    margin-top: 5px;
+    margin-bottom: -2px;
+    display: inline-block;
+
+    align-items: flex-end;
+
+    background: rgb(0, 120, 254);
+    color: white;
+    position: relative;
+}
+
+.message-to:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: -8px;
+    height: 20px;
+    width: 20px;
+    background: rgb(0, 120, 254);
+    border-bottom-left-radius: 15px;
+}
+
+.message-to:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: -10px;
+    width: 10px;
+    height: 20px;
+    transition-duration: 240ms;
+    background: white;
+    border-bottom-left-radius: 10px;
+}
+
+.message-dark-to:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: -10px;
+    width: 10px;
+    height: 20px;
+    transition-duration: 240ms;
+    background: black;
+    border-bottom-left-radius: 10px;
 }
 
 .external:after {
@@ -55,3 +368,4 @@
         transform: rotate(0.0deg)
     }
 }
+
