@@ -15,6 +15,7 @@
 	"author": "Matt <matt@dont-ping.me> (https://dont-ping.me)",
 	"license": "MIT",
 	"devDependencies": {
+		"@types/node": "^14.14.16",
 		"@types/react": "^17.0.26",
 		"@types/styled-components": "^5.1.14",
 		"@typescript-eslint/eslint-plugin": "^4.32.0",
