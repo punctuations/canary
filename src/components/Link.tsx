@@ -10,11 +10,7 @@ export const Link = (props: {
 	icon?: boolean;
 	children: React.ReactNode;
 }) => (
-	<LinkTag
-		href={props.href ?? '#'}
-		className={props.icon ? 'external' : ''}
-		style={{color: props.color ? '#0070f3' : ''}}
-	>
+	<LinkTag href={props.href ?? '#'} className={props.icon ? 'external' : ''}>
 		{props.children}
 	</LinkTag>
 );
