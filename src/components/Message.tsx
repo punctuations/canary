@@ -52,7 +52,7 @@ const Provider = (props: {
 					src={props.pfp}
 					alt="pfp"
 				/>
-				<ProviderDiv className="flex flex-col items-start">{props.children}</ProviderDiv>
+				<ProviderDiv>{props.children}</ProviderDiv>
 			</>
 		) : (
 			props.children
