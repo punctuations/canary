@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import '../styles';
-
 export const Link = (props: {
 	href?: string;
 	underline?: boolean;
 	color?: boolean;
 	icon?: boolean;
+	internal?: boolean;
 	children: React.ReactNode;
 }) => (
-	<LinkTag href={props.href ?? '#'} className={props.icon ? 'external' : ''}>
+	<LinkTag
+		href={props.href ?? ''}
+		className={props.icon ? (props.internal ? 'internal' : 'external') : ''}
+	>
 		{props.children}
 	</LinkTag>
 );
@@ -24,5 +26,13 @@ const LinkTag = styled.a<{
 	
 	&:hover {
 		${props => (props.color ? 'color: #3291ff;' : '')}
+	}
+
+	& .external:after {
+		content: ' \2197';
+	}
+
+	& .internal:after {
+		content: ' \2192';
 	}
 `;
