@@ -10,7 +10,7 @@ interface MouseEventWithTagName extends React.MouseEvent<HTMLDivElement> {
 	target: EventTargetWithTagName;
 }
 
-const Notification = (props: {
+export const Notification = (props: {
 	href?: string;
 	duration?: number;
 	dismiss?: boolean;
@@ -190,5 +190,3 @@ const Notification = (props: {
 		</AnimatePresence>
 	);
 };
-
-export default Notification;
