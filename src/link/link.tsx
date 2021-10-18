@@ -10,14 +10,20 @@ export type LinkProps = {
 };
 
 const Link = (props: LinkProps) => (
-	<a
-		href={props.href ?? ''}
-		className={props.icon ? (props.internal ? 'internal' : 'external') : ''}
-	>
+	<a href={props.href ?? ''}>
 		{props.children}
 		<style jsx>{`
 			a {
-				background: #26252a;
+				color: ${props.color ? '#0070f3' : 'inherit'};
+				text-decoration: ${props.underline ? 'underline' : 'inherit'};
+			}
+
+			a:hover {
+				color: ${props.color ? '#3291ff' : 'inherit'};
+			}
+
+			a:after {
+				content: ${props.icon ? (props.internal ? ' \u2192' : ' \u2197') : ''};
 			}
 		`}</style>
 	</a>
