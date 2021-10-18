@@ -63,27 +63,12 @@ export default (async () => {
 		input: {[name]: url},
 		output: [
 			{
-				// file: 'dist/index.js',
 				format: 'cjs',
 				exports: 'named',
 				entryFileNames: '[name]/index.js',
 				dir: 'dist',
 				globals,
 			},
-			// {
-			//   // file: 'dist/index.es.js',
-			//   format: 'es',
-			//   exports: 'named',
-			//   dir: 'dist',
-			//   globals,
-			// },
-			// {
-			//   file: pkg.browser,
-			//   format: 'umd',
-			//   exports: 'named',
-			//   globals,
-			//   name: 'GeistUI',
-			// },
 		],
 		external,
 		plugins,
