@@ -10,7 +10,7 @@ interface MouseEventWithTagName extends React.MouseEvent<HTMLDivElement> {
 	target: EventTargetWithTagName;
 }
 
-export const Notification = (props: {
+const Notification = (props: {
 	href?: string;
 	duration?: number;
 	dismiss?: boolean;
@@ -75,11 +75,11 @@ export const Notification = (props: {
 					}}
 					onClick={(event: MouseEventWithTagName) => {
 						if (
-							props.variant?.toLowerCase() === 'iOS'
-							&& props.href
-							&& event.target.tagName.toLowerCase() !== 'svg'
-							&& event.target.tagName.toLowerCase() !== 'button'
-							&& event.target.tagName.toLowerCase() !== 'path'
+							props.variant?.toLowerCase() === 'iOS' &&
+							props.href &&
+							event.target.tagName.toLowerCase() !== 'svg' &&
+							event.target.tagName.toLowerCase() !== 'button' &&
+							event.target.tagName.toLowerCase() !== 'path'
 						) {
 							router.push(props.href);
 						}
@@ -129,8 +129,8 @@ export const Notification = (props: {
 						</div>
 					</div>
 
-					{props.dismiss
-						&& (props.variant?.toLowerCase() === 'macos' ? (
+					{props.dismiss &&
+						(props.variant?.toLowerCase() === 'macos' ? (
 							<button
 								onClick={() => {
 									setHiddenState(true);
@@ -190,3 +190,5 @@ export const Notification = (props: {
 		</AnimatePresence>
 	);
 };
+
+export default Notification;

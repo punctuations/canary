@@ -1,4 +1,5 @@
-export {default as Message} from '../src/components/Message';
+export {default as Message} from './message';
+export type {MessageProps, MessageProviderProps} from './message';
 
-export {Notification} from '../src/components/Notification';
-export {Link} from '../src/components/Link';
+export {default as Link} from './link';
+export type {LinkProps} from './link';

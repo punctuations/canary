@@ -1,13 +1,14 @@
 {
 	"compilerOptions": {
-		"module": "ESNext",
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"module": "esnext",
 		"target": "es6",
 		"sourceMap": true,
 		"esModuleInterop": true,
-		"rootDir": "src",
-		"outDir": "dist",
 		"declaration": true,
-		"declarationMap": true,
+		"emitDeclarationOnly": true,
+		"declarationMap": false,
 		"moduleResolution": "node",
 		"strict": true,
 		"jsx": "react"

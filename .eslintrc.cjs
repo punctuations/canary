@@ -13,6 +13,6 @@ module.exports = {
 	rules: {
 		'@typescript-eslint/comma-dangle': 'off',
 	},
-	ignorePatterns: ['dist'],
+	ignorePatterns: ['dist', 'rollup.config.js'],
 };
  
