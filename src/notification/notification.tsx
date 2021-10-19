@@ -75,11 +75,11 @@ const Notification = (props: {
 					}}
 					onClick={(event: MouseEventWithTagName) => {
 						if (
-							props.variant?.toLowerCase() === 'iOS' &&
-							props.href &&
-							event.target.tagName.toLowerCase() !== 'svg' &&
-							event.target.tagName.toLowerCase() !== 'button' &&
-							event.target.tagName.toLowerCase() !== 'path'
+							props.variant?.toLowerCase() === 'iOS'
+							&& props.href
+							&& event.target.tagName.toLowerCase() !== 'svg'
+							&& event.target.tagName.toLowerCase() !== 'button'
+							&& event.target.tagName.toLowerCase() !== 'path'
 						) {
 							router.push(props.href);
 						}
@@ -129,8 +129,8 @@ const Notification = (props: {
 						</div>
 					</div>
 
-					{props.dismiss &&
-						(props.variant?.toLowerCase() === 'macos' ? (
+					{props.dismiss
+						&& (props.variant?.toLowerCase() === 'macos' ? (
 							<button
 								onClick={() => {
 									setHiddenState(true);
