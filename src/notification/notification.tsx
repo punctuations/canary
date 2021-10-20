@@ -36,13 +36,13 @@ const Notification = (props: NotificationProps) => {
 
 	const [hidden, setHiddenState] = React.useState<boolean>(false);
 
-	// React.useEffect(() => {
-	// 	if (!props.dismiss) {
-	// 		setTimeout(() => {
-	// 			setHiddenState(true);
-	// 		}, props.duration ?? 5000);
-	// 	}
-	// }, []);
+	React.useEffect(() => {
+		if (!props.dismiss) {
+			setTimeout(() => {
+				setHiddenState(true);
+			}, props.duration ?? 5000);
+		}
+	}, []);
 
 	return (
 		<AnimatePresence>
