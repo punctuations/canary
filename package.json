@@ -1,5 +1,5 @@
 {
-	"name": "dsgn",
+	"name": "canary-ui",
 	"description": "A compact & modern ui kit.",
 	"version": "1.0.0",
 	"main": "dist/index.js",
@@ -8,7 +8,7 @@
 	"unpkg": "dist/index.min.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/punctuations/dsgn.git"
+		"url": "git+https://github.com/punctuations/canary.git"
 	},
 	"author": "Matt <matt@dont-ping.me> (https://dont-ping.me)",
 	"license": "MIT",
@@ -56,9 +56,9 @@
 		"fix": "eslint ./src/**/*.{ts,tsx} --fix"
 	},
 	"bugs": {
-		"url": "https://github.com/punctuations/dsgn/issues"
+		"url": "https://github.com/punctuations/canary/issues"
 	},
-	"homepage": "https://github.com/punctuations/dsgn#readme",
+	"homepage": "https://github.com/punctuations/canary#readme",
 	"files": [
 		"dist",
 		"package.json"
