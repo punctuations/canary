@@ -27,7 +27,7 @@ const Link = (props: LinkProps) => (
 			}
 
 			.internal:after {
-				content: ' →';
+				content: ' ›';
 				text-decoration: none;
 			}
 

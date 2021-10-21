@@ -15,3 +15,17 @@ storiesOf('Link', module).add('default', () => (
 		`}</style>
 	</>
 ));
+
+storiesOf('Link', module).add('internal', () => (
+	<>
+		<Link href="https://example.com/" internal color underline icon>
+			Learn more
+		</Link>
+		<style jsx global>{`
+			html {
+				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+		`}</style>
+	</>
+));
