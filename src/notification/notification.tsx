@@ -253,6 +253,7 @@ const Notification = (props: NotificationProps) => {
 					// normalize
 					margin-block-start: unset;
 					margin-block-end: unset;
+					font-weight: unset;
 
 					font-size: 0.75rem;
 					line-height: 1rem;
