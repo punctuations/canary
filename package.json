@@ -1,5 +1,5 @@
 {
-	"name": "canary-ui",
+	"name": "@canary-ui/react",
 	"description": "A compact & modern ui kit.",
 	"version": "1.0.0",
 	"main": "dist/index.js",
@@ -45,7 +45,7 @@
 	},
 	"scripts": {
 		"storybook": "start-storybook -p 6006",
-		"release": "rollup -c && tsc",
+		"release": "yanr build:rollup && yarn build:esm && yarn build:types && yarn build:esm-types && yarn publish --access public --non-interactive",
 		"build:storybook": "build-storybook",
 		"build:rollup": "rollup -c",
 		"build:esm": "babel --config-file ./babel.config.js --extensions \".js,.ts,.tsx\" ./src --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
