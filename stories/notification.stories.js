@@ -5,7 +5,6 @@ import Notification from '../src/notification';
 storiesOf('Notification', module).add('iOS', () => (
 	<>
 		<Notification
-			style={{fontFamily: 'sans-serif'}}
 			src={
 				'https://cdn.discordapp.com/attachments/708830079551275098/890787858862968872/unknown.png'
 			}
@@ -22,7 +21,7 @@ storiesOf('Notification', module).add('iOS', () => (
 ));
 
 storiesOf('Notification', module).add('macOS', () => (
-	<div style={{fontFamily: 'sans-serif', width: '33%', position: 'absolute', right: '.5rem'}}>
+	<div style={{width: '33%', position: 'absolute', right: '.5rem'}}>
 		<Notification
 			app={'Launch'}
 			variant={'macOS'}
@@ -42,7 +41,7 @@ storiesOf('Notification', module).add('macOS', () => (
 ));
 
 storiesOf('Notification', module).add('dismissible', () => (
-	<div style={{fontFamily: 'sans-serif', width: '33%', position: 'absolute', right: '.5rem'}}>
+	<div style={{width: '33%', position: 'absolute', right: '.5rem'}}>
 		<Notification
 			dismiss
 			app={'Launch'}
