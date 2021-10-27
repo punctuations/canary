@@ -2,6 +2,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import localResolve from 'rollup-plugin-local-resolve';
 import babel from 'rollup-plugin-babel';
+import alias from 'rollup-plugin-alias';
 import fs from 'fs-extra';
 import path from 'path';
 const componentsPath = path.join(__dirname, 'src');
@@ -16,6 +17,9 @@ const plugins = [
 		extensions,
 		presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
 		plugins: ['styled-jsx/babel'],
+	}),
+	alias({
+		'fast-average-color': 'fast-average-color/dist/index.esm.js',
 	}),
 	localResolve(),
 	nodeResolve({

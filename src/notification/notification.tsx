@@ -73,11 +73,11 @@ const Notification = (props: NotificationProps) => {
 					}}
 					onClick={(event: MouseEventWithTagName) => {
 						if (
-							props.variant?.toLowerCase() === 'iOS' &&
-							props.href &&
-							event.target.tagName.toLowerCase() !== 'svg' &&
-							event.target.tagName.toLowerCase() !== 'button' &&
-							event.target.tagName.toLowerCase() !== 'path'
+							props.variant?.toLowerCase() === 'iOS'
+							&& props.href
+							&& event.target.tagName.toLowerCase() !== 'svg'
+							&& event.target.tagName.toLowerCase() !== 'button'
+							&& event.target.tagName.toLowerCase() !== 'path'
 						) {
 							router.push(props.href);
 						}
@@ -98,8 +98,8 @@ const Notification = (props: NotificationProps) => {
 						</div>
 					</div>
 
-					{props.dismiss &&
-						(props.variant?.toLowerCase() === 'macos' ? (
+					{props.dismiss
+						&& (props.variant?.toLowerCase() === 'macos' ? (
 							<button
 								onClick={() => {
 									setHiddenState(true);
@@ -159,8 +159,8 @@ const Notification = (props: NotificationProps) => {
 			<style jsx global>{`
 				.notification-container-auto {
 					border-color: ${props.variant?.toLowerCase() === 'macos'
-						? 'rgba(255, 255, 255, 0.4)'
-						: ''};
+			? 'rgba(255, 255, 255, 0.4)'
+			: ''};
 					background-color: rgba(229, 231, 235, 0.4);
 				}
 
@@ -176,24 +176,24 @@ const Notification = (props: NotificationProps) => {
 					display: -ms-flex;
 					display: flex;
 					-webkit-box-pack: ${props.dismiss && props.variant?.toLowerCase() !== 'macos'
-						? 'justify'
-						: 'start'};
+			? 'justify'
+			: 'start'};
 					-ms-flex-pack: ${props.dismiss && props.variant?.toLowerCase() !== 'macos'
-						? 'justify'
-						: 'start'};
+			? 'justify'
+			: 'start'};
 					justify-content: ${props.dismiss && props.variant?.toLowerCase() !== 'macos'
-						? 'space-between'
-						: 'flex-start'};
+			? 'space-between'
+			: 'flex-start'};
 					margin-top: 0.5rem;
 					position: relative;
 					border-width: ${props.variant?.toLowerCase() === 'macos' ? '1px' : ''};
 					padding: ${props.variant?.toLowerCase() === 'macos' ? '0.75rem 1.25rem' : '0.5rem 2rem'};
 					-webkit-box-shadow: ${props.variant?.toLowerCase() === 'macos'
-						? '0 0 #000, 0 0 #000, 0 0 #000, 0 0, #000, 0 1px 2px 0 rbga(0, 0, 0, 0, 0.5)'
-						: ''};
+			? '0 0 #000, 0 0 #000, 0 0 #000, 0 0, #000, 0 1px 2px 0 rbga(0, 0, 0, 0, 0.5)'
+			: ''};
 					box-shadow: ${props.variant?.toLowerCase() === 'macos'
-						? '0 0 #000, 0 0 #000, 0 0 #000, 0 0, #000, 0 1px 2px 0 rbga(0, 0, 0, 0, 0.5)'
-						: ''};
+			? '0 0 #000, 0 0 #000, 0 0 #000, 0 0, #000, 0 1px 2px 0 rbga(0, 0, 0, 0, 0.5)'
+			: ''};
 					cursor: ${props.variant?.toLowerCase() !== 'macOS' && props.href ? 'pointer' : 'auto'};
 					border-radius: 0.75rem;
 					width: 100%;
@@ -202,8 +202,8 @@ const Notification = (props: NotificationProps) => {
 
 				.notification-container > div {
 					margin-left: ${props.variant?.toLowerCase() === 'macos'
-						? 'unset'
-						: 'calc(2rem * calc(1 - 0))'};
+			? 'unset'
+			: 'calc(2rem * calc(1 - 0))'};
 
 					display: -webkit-box;
 					display: -ms-flexbox;
@@ -263,8 +263,8 @@ const Notification = (props: NotificationProps) => {
 
 				.notification-content {
 					margin-top: ${props.variant?.toLowerCase() === 'ios'
-						? 'calc(-0.25rem * calc(1 - 0))'
-						: ''};
+			? 'calc(-0.25rem * calc(1 - 0))'
+			: ''};
 
 					display: -webkit-box;
 					display: -ms-flexbox;
