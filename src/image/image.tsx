@@ -64,7 +64,13 @@ const Image = (props: ImageProps) => {
 					href={typeof props.href === 'string' ? props.href ?? '' : props.href?.ref}
 					className={typeof props.href === 'string' ? '' : props.href?.type}
 				>
-					<span className="content">Check it out</span>
+					<span className="content">
+						{typeof props.href === 'string'
+							? 'Check it out'
+							: props.href?.type?.toLowerCase() === 'internal'
+							? 'Learn more'
+							: 'Check it out'}
+					</span>
 				</a>
 			</div>
 

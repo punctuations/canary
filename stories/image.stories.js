@@ -26,7 +26,7 @@ storiesOf('Image', module).add('full', () => (
 		<Image
 			variant="full"
 			title="Example"
-			href={{ref: '#', type: 'external'}}
+			href={{ref: '#', type: 'internal'}}
 			color={'#2d2f3b'}
 			src={
 				'https://www.apple.com/v/mac/home/bj/images/overview/monterey/tile_monterey__bm1x7sttegty_large_2x.jpg'
