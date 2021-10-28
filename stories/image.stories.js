@@ -20,3 +20,25 @@ storiesOf('Image', module).add('default', () => (
 		`}</style>
 	</div>
 ));
+
+storiesOf('Image', module).add('full', () => (
+	<div style={{width: '50%'}}>
+		<Image
+			variant="full"
+			title="Example"
+			href={{ref: '#', type: 'external'}}
+			color={'#2d2f3b'}
+			src={
+				'https://www.apple.com/v/mac/home/bj/images/overview/monterey/tile_monterey__bm1x7sttegty_large_2x.jpg'
+			}
+		>
+			Lorem ipsum dolor sit amet...
+		</Image>
+		<style jsx global>{`
+			html {
+				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+		`}</style>
+	</div>
+));

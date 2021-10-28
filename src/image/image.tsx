@@ -3,13 +3,11 @@ import {motion} from 'framer-motion';
 import FastAverageColor from 'fast-average-color';
 
 export type ImageProps = {
-	full?: boolean;
+	variant?: 'default' | 'full';
+	// To add soon: direction?: 'row' | 'column';
 	src: string;
 	// Hex colour code OR average colour of image
 	color?: string | boolean;
-	// ONLY hex code of dark colour
-	dark?: string;
-	pane?: string;
 	title?: string;
 	// Description
 	children?: React.ReactNode;
@@ -70,7 +68,9 @@ const Image = (props: ImageProps) => {
 				</a>
 			</div>
 
-			<img className="image-src" src={props.src} alt={props.title} />
+			{props.variant?.toLowerCase() === 'default' || !props.variant ? (
+				<img className="image-src" src={props.src} alt={props.title} />
+			) : null}
 			<style jsx>{`
 				a {
 					color: inherit;
@@ -98,14 +98,19 @@ const Image = (props: ImageProps) => {
 				}
 
 				:global(.image-container) {
+					background-size: ${props.variant?.toLowerCase() === 'full' ? 'cover' : 'unset'};
+					background-image: ${props.variant?.toLowerCase() === 'full'
+						? `url(${props.src})`
+						: 'unset'};
 					background-color: ${typeof props.color === 'string'
-			? props.color
-			: average.color ?? '#c4c4c4'};
+						? props.color
+						: average.color ?? '#c4c4c4'};
 					border-color: ${typeof props.color === 'string' ? props.color : average.color ?? '#fff'};
 					border-radius: 0.375rem;
-					display: -webkit-box;
-					display: -ms-flexbox;
-					display: flex;
+					display: ${props.variant?.toLowerCase() === 'full' ? '-moz-grid' : '-webkit-box'};
+					display: ${props.variant?.toLowerCase() === 'full' ? '-ms-grid' : '-ms-flexbox'};
+					display: ${props.variant?.toLowerCase() === 'full' ? 'grid' : 'flex'};
+					place-content: center;
 					-webkit-box-orient: vertical;
 					-webkit-box-direction: normal;
 					-ms-flex-direction: column;
@@ -123,12 +128,12 @@ const Image = (props: ImageProps) => {
 						0 2px 4px -1px rgba(0, 0, 0, 0.06);
 					// replace with fac
 					color: ${typeof props.color === 'string'
-			? luma < 75
-				? '#fff'
-				: '#000'
-			: average.isDark
-				? '#fff'
-				: '#000'};
+						? luma < 75
+							? '#fff'
+							: '#000'
+						: average.isDark
+						? '#fff'
+						: '#000'};
 					width: 100%;
 					-webkit-transition-property: all;
 					transition-property: all;
@@ -321,9 +326,12 @@ const Image = (props: ImageProps) => {
 				}
 
 				:global(.image-link) {
+					margin-block-start: ${props.variant?.toLowerCase() === 'full' ? '1rem' : 'unset'};
+
 					display: -webkit-box;
 					display: -ms-flexbox;
-					display: flex;
+					display: ${props.variant?.toLowerCase() === 'full' ? 'block' : 'flex'};
+					text-align: center;
 					-webkit-box-pack: start;
 					-ms-flex-pack: start;
 					justify-content: flex-start;
@@ -335,7 +343,7 @@ const Image = (props: ImageProps) => {
 						height: 100%;
 						font-size: 1.5rem;
 						line-height: 2rem;
-						margin-left: 5rem;
+						margin-left: ${props.variant?.toLowerCase() === 'full' ? 'unset' : '5rem'};
 						padding-bottom: 2rem;
 					}
 				}
