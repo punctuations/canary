@@ -7,7 +7,6 @@ storiesOf('Image', module).add('default', () => (
 		<Image
 			title="Example"
 			href={{ref: '#', type: 'external'}}
-			color={'#2d2f3b'}
 			src={'https://cdn.dont-ping.me/listen-along.png'}
 		>
 			Lorem ipsum dolor sit amet...
