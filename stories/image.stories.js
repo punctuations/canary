@@ -42,3 +42,22 @@ storiesOf('Image', module).add('full', () => (
 		`}</style>
 	</div>
 ));
+
+storiesOf('Image', module).add('direction', () => (
+	<div style={{width: '50%'}}>
+		<Image
+			title="Example"
+			direction="column"
+			href={{ref: '#', type: 'internal'}}
+			src={'https://cdn.dont-ping.me/listen-along.png'}
+		>
+			Lorem ipsum dolor sit amet...
+		</Image>
+		<style jsx global>{`
+			html {
+				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+		`}</style>
+	</div>
+));

@@ -4,7 +4,7 @@ import FastAverageColor from 'fast-average-color';
 
 export type ImageProps = {
 	variant?: 'default' | 'full';
-	// To add soon: direction?: 'row' | 'column';
+	direction?: 'row' | 'column';
 	src: string;
 	// Hex colour code OR average colour of image
 	color?: string | boolean;
@@ -75,7 +75,9 @@ const Image = (props: ImageProps) => {
 			</div>
 
 			{props.variant?.toLowerCase() === 'default' || !props.variant ? (
-				<img className="image-src" src={props.src} alt={props.title} />
+				<div className="image-src-container">
+					<img className="image-src" src={props.src} alt={props.title} />
+				</div>
 			) : null}
 			<style jsx>{`
 				a {
@@ -186,12 +188,32 @@ const Image = (props: ImageProps) => {
 					z-index: 10;
 				}
 
+				.image-src-container {
+					position: ${props.direction?.toLowerCase() === 'column' ? 'relative' : 'static'};
+					width: ${props.direction?.toLowerCase() === 'column' ? '100%' : 'unset'};
+					height: ${props.direction?.toLowerCase() === 'column' ? '100%' : 'unset'};
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+					flex-direction: column;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
+					align-items: center;
+					-webkit-box-pack: start;
+					-ms-flex-pack: start;
+					justify-content: flex-start;
+					bottom: ${props.direction?.toLowerCase() === 'column' ? '-3rem' : 'inherit'};
+				}
+
 				:global(.image-src) {
 					width: 91.666667%;
 					pointer-events: none;
 					position: absolute;
-					bottom: -2.25rem;
-					right: -9rem;
+					bottom: ${props.direction?.toLowerCase() === 'column' ? '0' : '-2.25rem'};
+					right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-9rem'};
 					-webkit-user-select: none;
 					-moz-user-select: none;
 					-ms-user-select: none;
@@ -200,27 +222,27 @@ const Image = (props: ImageProps) => {
 				@media (min-width: 640px) {
 					.image-src {
 						bottom: -4.5rem;
-						right: -10rem;
+						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-10rem'};
 						width: 24rem;
 					}
 				}
 				@media (min-width: 768px) {
 					.image-src {
-						right: -2rem;
+						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-2rem'};
 						bottom: -5rem;
 						width: 24rem;
 					}
 				}
 				@media (min-width: 1024px) {
 					.image-src {
-						right: -2rem;
+						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-2rem'};
 						bottom: -5rem;
 						width: 24rem;
 					}
 				}
 				@media (min-width: 1280px) {
 					.image-src {
-						right: -2rem;
+						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-2rem'};
 						bottom: -5rem;
 						width: 24rem;
 					}
@@ -228,14 +250,14 @@ const Image = (props: ImageProps) => {
 				@media (min-width: 1536px) {
 					.image-src {
 						width: 58.333333%;
-						right: -4.5rem;
+						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-4.5rem'};
 						bottom: -5rem;
 					}
 				}
 				@media (min-width: 1920px) {
 					.image-src {
 						width: 50%;
-						right: -4.5rem;
+						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-4.5rem'};
 						bottom: -5rem;
 					}
 				}
@@ -338,9 +360,9 @@ const Image = (props: ImageProps) => {
 					display: -ms-flexbox;
 					display: ${props.variant?.toLowerCase() === 'full' ? 'block' : 'flex'};
 					text-align: center;
-					-webkit-box-pack: start;
-					-ms-flex-pack: start;
-					justify-content: flex-start;
+					-webkit-box-pack: ${props.direction?.toLowerCase() === 'column' ? 'center' : 'start'};
+					-ms-flex-pack: ${props.direction?.toLowerCase() === 'column' ? 'center' : 'start'};
+					justify-content: ${props.direction?.toLowerCase() === 'column' ? 'center' : 'start'};
 					height: 50%;
 					width: 100%;
 				}
