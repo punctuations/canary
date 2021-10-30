@@ -371,7 +371,10 @@ const Image = (props: ImageProps) => {
 						height: 100%;
 						font-size: 1.5rem;
 						line-height: 2rem;
-						margin-left: ${props.variant?.toLowerCase() === 'full' ? 'unset' : '5rem'};
+						margin-left: ${props.variant?.toLowerCase() === 'full' ||
+						props.direction?.toLowerCase() === 'column'
+							? 'unset'
+							: '5rem'};
 						padding-bottom: 2rem;
 					}
 				}
