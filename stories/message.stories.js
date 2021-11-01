@@ -10,6 +10,12 @@ storiesOf('Message', module).add('default', () => (
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
+			}
 		`}</style>
 	</>
 ));
@@ -20,6 +26,12 @@ storiesOf('Message', module).add('provider', () => (
 			html {
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
 			}
 		`}</style>
 	</Message.Provider>
@@ -32,6 +44,12 @@ storiesOf('Message', module).add('to', () => (
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
+			}
 		`}</style>
 	</Message.Provider>
 ));
@@ -43,6 +61,12 @@ storiesOf('Message', module).add('hidden/multiple', () => (
 			html {
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
 			}
 		`}</style>
 	</Message.Provider>

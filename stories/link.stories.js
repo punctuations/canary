@@ -12,6 +12,12 @@ storiesOf('Link', module).add('default', () => (
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
+			}
 		`}</style>
 	</>
 ));
@@ -25,6 +31,12 @@ storiesOf('Link', module).add('internal', () => (
 			html {
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
 			}
 		`}</style>
 	</>

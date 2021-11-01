@@ -16,6 +16,12 @@ storiesOf('Notification', module).add('iOS', () => (
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
+			}
 		`}</style>
 	</>
 ));
@@ -35,6 +41,12 @@ storiesOf('Notification', module).add('macOS', () => (
 			html {
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
 			}
 		`}</style>
 	</div>
@@ -56,6 +68,12 @@ storiesOf('Notification', module).add('dismissible', () => (
 			html {
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
 			}
 		`}</style>
 	</div>

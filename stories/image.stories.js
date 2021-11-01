@@ -16,6 +16,12 @@ storiesOf('Image', module).add('default', () => (
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
+			}
 		`}</style>
 	</div>
 ));
@@ -38,6 +44,12 @@ storiesOf('Image', module).add('full', () => (
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
+			}
 		`}</style>
 	</div>
 ));
@@ -56,6 +68,12 @@ storiesOf('Image', module).add('direction', () => (
 			html {
 				font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 					Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #000;
+				}
 			}
 		`}</style>
 	</div>
