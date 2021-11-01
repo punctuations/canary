@@ -47,6 +47,7 @@
 	},
 	"scripts": {
 		"storybook": "start-storybook -p 6006",
+		"mock:prod": "yarn build:rollup && yarn build:esm && yarn build:types && yarn build:esm-types",
 		"release": "yarn build:rollup && yarn build:esm && yarn build:types && yarn build:esm-types && yarn publish --access public --non-interactive",
 		"build:storybook": "build-storybook",
 		"build:rollup": "rollup -c",
