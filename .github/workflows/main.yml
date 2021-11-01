@@ -1,0 +1,41 @@
+name: CI
+on:
+    push:
+      branches:
+        - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Begin CI...
+        uses: actions/checkout@v2
+
+      - name: Use Node 14
+        uses: actions/setup-node@v1
+        with:
+          node-registry: 14.x
+          registry-url: 'https://regsitry.npmjs.org'
+
+      - name: Use cached node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            nodeModules-
+
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
+        with:
+          tag-prefix: ''
+
+      - name: Install depenencies
+        run: yarn install --freeze-lockfile
+        env:
+          CI: true
+
+      - name: Release
+        run: yarn release
+        env:
+          CI: true
