@@ -32,13 +32,13 @@ const Message = (props: MessageProps) => (
 		style={{userSelect: 'none'}}
 		className={
 			props.to
-				? `${props.hide ? 'message-hidden-to' : 'message-to'}`
+				? `${props.hide ? 'message-hidden-to' : 'message-auto-to'}`
 				: `${props.hide ? 'message-auto-hidden' : 'message-auto'}`
 		}
 	>
 		{props.text}
 		<style jsx global>{`
-			.message-to {
+			.message-auto-to {
 				border-radius: 20px;
 				padding: 8px 15px;
 				margin-top: 5px;
@@ -52,7 +52,7 @@ const Message = (props: MessageProps) => (
 				position: relative;
 			}
 
-			.message-to:before {
+			.message-auto-to:before {
 				content: '';
 				position: absolute;
 				z-index: 0;
@@ -64,7 +64,7 @@ const Message = (props: MessageProps) => (
 				border-bottom-left-radius: 15px;
 			}
 
-			.message-to:after {
+			.message-auto-to:after {
 				content: '';
 				position: absolute;
 				z-index: 1;
@@ -114,19 +114,6 @@ const Message = (props: MessageProps) => (
 				transition-duration: 240ms;
 				background: white;
 				border-bottom-right-radius: 10px;
-			}
-
-			.message-auto-to:after {
-				content: '';
-				position: absolute;
-				z-index: 1;
-				bottom: 0;
-				right: -10px;
-				width: 10px;
-				height: 20px;
-				transition-duration: 240ms;
-				background: white;
-				border-bottom-left-radius: 10px;
 			}
 
 			.message-auto-hidden {
@@ -278,15 +265,15 @@ const Provider = (props: MessageProviderProps) => (
 			section :global(.message-provide) {
 				display: flex;
 				margin-right: ${props.pfp && props.to
-		? 'calc(.75rem * calc(1 - 0))'
-		: props.pfp
-			? 'calc(.75rem * 0)'
-			: 'inherit'};
+					? 'calc(.75rem * calc(1 - 0))'
+					: props.pfp
+					? 'calc(.75rem * 0)'
+					: 'inherit'};
 				margin-left: ${props.pfp && props.to
-		? 'calc(.75rem * 0)'
-		: props.pfp
-			? 'calc(.75rem * calc(1 - 0))'
-			: 'inherit'};
+					? 'calc(.75rem * 0)'
+					: props.pfp
+					? 'calc(.75rem * calc(1 - 0))'
+					: 'inherit'};
 				flex-direction: column;
 				-webkit-box-align: start;
 				-ms-flex-align: start;
