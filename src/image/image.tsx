@@ -134,7 +134,6 @@ const Image = (props: ImageProps) => {
 						0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 					box-shadow: 0 0 #000, 0 0 #000, 0 0 #000, 0 0, #000, 0 4px 6px -1px rgba(0, 0, 0, 0.1),
 						0 2px 4px -1px rgba(0, 0, 0, 0.06);
-					// replace with fac
 					color: ${typeof props.color === 'string'
 						? luma < 75
 							? '#fff'
@@ -251,13 +250,13 @@ const Image = (props: ImageProps) => {
 					.image-src {
 						width: 58.333333%;
 						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-4.5rem'};
-						bottom: -5rem;
+						bottom: -9rem;
 					}
 				}
 				@media (min-width: 1920px) {
 					.image-src {
 						width: 50%;
-						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-4.5rem'};
+						right: ${props.direction?.toLowerCase() === 'column' ? 'initial' : '-7.5rem'};
 						bottom: -5rem;
 					}
 				}
