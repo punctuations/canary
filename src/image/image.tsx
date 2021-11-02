@@ -106,6 +106,7 @@ const Image = (props: ImageProps) => {
 				}
 
 				:global(.image-container) {
+					background-position: center center;
 					background-size: ${props.variant?.toLowerCase() === 'full' ? 'cover' : 'unset'};
 					background-image: ${props.variant?.toLowerCase() === 'full'
 						? `url(${props.src})`
