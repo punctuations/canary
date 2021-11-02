@@ -1,7 +1,7 @@
 {
 	"name": "@canary-ui/react",
 	"description": "A compact & modern ui kit.",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"main": "dist/index.js",
 	"module": "esm/index.js",
 	"types": "dist/index.d.ts",
