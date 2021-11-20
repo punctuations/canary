@@ -24,6 +24,7 @@ export type MessageProps = {
 	text: string;
 	hide?: boolean;
 	to?: boolean;
+	bg?: string;
 };
 
 const Message = (props: MessageProps) => (
@@ -73,7 +74,7 @@ const Message = (props: MessageProps) => (
 				width: 10px;
 				height: 20px;
 				transition-duration: 240ms;
-				background: white;
+				background: ${props.bg ?? 'white'};
 				border-bottom-left-radius: 10px;
 			}
 
@@ -112,7 +113,7 @@ const Message = (props: MessageProps) => (
 				width: 10px;
 				height: 20px;
 				transition-duration: 240ms;
-				background: white;
+				background: ${props.bg ?? 'white'};
 				border-bottom-right-radius: 10px;
 			}
 
@@ -166,7 +167,7 @@ const Message = (props: MessageProps) => (
 					width: 10px;
 					height: 20px;
 					transition-duration: 240ms;
-					background: black;
+					background: ${props.bg ?? 'black'};
 					border-bottom-right-radius: 10px;
 				}
 
@@ -179,7 +180,7 @@ const Message = (props: MessageProps) => (
 					width: 10px;
 					height: 20px;
 					transition-duration: 240ms;
-					background: black;
+					background: ${props.bg ?? 'black'};
 					border-bottom-left-radius: 10px;
 				}
 
