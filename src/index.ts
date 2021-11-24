@@ -9,3 +9,6 @@ export type {NotificationProps} from './notification';
 
 export {default as Image} from './image';
 export type {ImageProps} from './image';
+
+export {default as Input} from './input';
+export type {InputProps} from './input';
